@@ -1,0 +1,49 @@
+### 1️⃣ Test root route
+GET http://127.0.0.1:5000/
+Accept: application/json
+
+###
+
+### 2️⃣ Add a test donor via browser-friendly GET
+GET http://127.0.0.1:5000/add_test_donor
+Accept: application/json
+
+###
+
+### 3️⃣ Get all donors
+GET http://127.0.0.1:5000/donors
+Accept: application/json
+
+###
+
+### 4️⃣ Search donors by blood type (example O+)
+GET http://127.0.0.1:5000/search_donor?blood_type=O+
+Accept: application/json
+
+###
+
+### 5️⃣ Add donor via POST (JSON)
+POST http://127.0.0.1:5000/add_donor
+Content-Type: application/json
+
+{
+  "name": "Gopika",
+  "age": 20,
+  "blood_type": "A+",
+  "phone": "9876543210",
+  "email": "gopika@example.com"
+}
+
+###
+
+### 6️⃣ Add another donor via POST
+POST http://127.0.0.1:5000/add_donor
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "age": 30,
+  "blood_type": "B+",
+  "phone": "1234567890",
+  "email": "john@example.com"
+}
