@@ -4,25 +4,7 @@ Accept: application/json
 
 ###
 
-### 2️⃣ Add a test donor via browser-friendly GET
-GET http://127.0.0.1:5000/add_test_donor
-Accept: application/json
-
-###
-
-### 3️⃣ Get all donors
-GET http://127.0.0.1:5000/donors
-Accept: application/json
-
-###
-
-### 4️⃣ Search donors by blood type (example O+)
-GET http://127.0.0.1:5000/search_donor?blood_type=O+
-Accept: application/json
-
-###
-
-### 5️⃣ Add donor via POST (JSON)
+### 2️⃣ Add donor (POST)
 POST http://127.0.0.1:5000/add_donor
 Content-Type: application/json
 
@@ -36,14 +18,54 @@ Content-Type: application/json
 
 ###
 
-### 6️⃣ Add another donor via POST
-POST http://127.0.0.1:5000/add_donor
+### 3️⃣ Get all donors (GET)
+GET http://127.0.0.1:5000/donors
+Accept: application/json
+
+###
+
+### 4️⃣ Search donor by blood type (GET)
+GET http://127.0.0.1:5000/search_donor?blood_type=A+
+Accept: application/json
+
+###
+
+### 5️⃣ Update donor by ID (PUT)
+PUT http://127.0.0.1:5000/update_donor/3
 Content-Type: application/json
 
 {
-  "name": "John Doe",
-  "age": 30,
-  "blood_type": "B+",
-  "phone": "1234567890",
-  "email": "john@example.com"
+  "name": "Gopika Ajith",
+  "age": 21,
+  "blood_type": "A+",
+  "phone": "9876543210",
+  "email": "gopika_updated@example.com"
+}
+
+###
+
+### 6️⃣ Delete donor by ID (DELETE)
+DELETE http://127.0.0.1:5000/delete_donor/3
+Accept: application/json
+
+###
+
+### 7️⃣ User login (POST)
+POST http://127.0.0.1:5000/login_user
+Content-Type: application/json
+
+{
+  "username": "gopika",
+  "password": "1234"
+}
+
+###
+
+### 8️⃣ Admin login (POST)
+POST http://127.0.0.1:5000/login_admin
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
 }
